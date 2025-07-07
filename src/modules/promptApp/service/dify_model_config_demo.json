@@ -1,0 +1,88 @@
+{
+  "pre_prompt": "写一首诗，标题为：{{title}}",
+  "prompt_type": "simple",
+  "chat_prompt_config": {},
+  "completion_prompt_config": {},
+  "user_input_form": [
+    {
+      "text-input": {
+        "label": "title",
+        "variable": "title",
+        "required": true,
+        "max_length": 48,
+        "default": ""
+      }
+    },
+    {
+      "select": {
+        "label": "商家类型",
+        "variable": "shangjialeixing",
+        "required": true,
+        "options": [
+          "娱乐",
+          "美食"
+        ],
+        "default": ""
+      }
+    },
+    {
+      "paragraph": {
+        "label": "内容",
+        "variable": "content",
+        "required": true,
+        "default": ""
+      }
+    }
+  ],
+  "dataset_query_variable": "",
+  "opening_statement": "",
+  "more_like_this": {
+    "enabled": false
+  },
+  "suggested_questions_after_answer": {
+    "enabled": false
+  },
+  "speech_to_text": {
+    "enabled": false
+  },
+  "retriever_resource": {
+    "enabled": false
+  },
+  "sensitive_word_avoidance": {
+    "enabled": false,
+    "type": "",
+    "configs": []
+  },
+  "external_data_tools": [],
+  "agent_mode": {
+    "enabled": true,
+    "tools": []
+  },
+  "model": {
+    "provider": "openai",
+    "name": "gpt-3.5-turbo-instruct",
+    "mode": "completion",
+    "completion_params": {
+      "max_tokens": 512,
+      "temperature": 1,
+      "top_p": 1,
+      "presence_penalty": 0,
+      "frequency_penalty": 0,
+      "stop": []
+    }
+  },
+  "dataset_configs": {
+    "retrieval_model": "single"
+  },
+  "file_upload": {
+    "image": {
+      "enabled": false,
+      "number_limits": 3,
+      "detail": "high",
+      "transfer_methods": [
+        "remote_url",
+        "local_file"
+      ]
+    }
+  }
+}

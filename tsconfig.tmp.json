@@ -1,0 +1,35 @@
+// 给属性做注释，实际启用需删除中文注释
+{
+  "compileOnSave": true, // 在保存时进行编译
+  "compilerOptions": {
+    "target": "ES2020", // 目标 ECMAScript 版本
+    "module": "CommonJS", // 模块系统
+    "moduleResolution": "node", // 模块解析策略，通常用于 Node.js
+    "esModuleInterop": true, // 启用 ES 模块和 CommonJS 模块之间的互操作性（兼容）
+    "experimentalDecorators": true, // 启用实验性装饰器特性
+    "emitDecoratorMetadata": true, // 启用装饰器元数据生成
+    "inlineSourceMap": true, // 内联源映射
+    "noImplicitThis": true, // 禁止隐式的 "this" 类型
+    "noUnusedLocals": false, // 允许未使用的局部变量
+    "stripInternal": true, // 移除内部注释和声明
+    "skipLibCheck": true, // 跳过类型检查库文件
+    "pretty": true, // 输出格式美化
+    "declaration": true, // 生成声明文件（.d.ts 文件）
+    "noImplicitAny": false, // 允许隐式 "any" 类型
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types" // 自定义类型声明文件的位置
+    ],
+    "outDir": "dist" // 编译输出目录
+  },
+  "exclude": [
+    "dist", // 排除编译输出目录
+    "node_modules", // 排除 node_modules 目录
+    "test" // 排除测试文件目录
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs" // 用于 ts-node 的编译选项
+    }
+  }
+}

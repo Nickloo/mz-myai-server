@@ -1,0 +1,26 @@
+version: "3.1"
+
+services:
+  myai-server:
+    image: registry.cn-beijing.aliyuncs.com/maiziit/mz-myai-server:latest
+    ports:
+      - 8001:8001
+    environment:
+      - NODE_ENV=test
+    depends_on:
+      - redis
+    networks:
+      - myai-net
+      
+  redis:
+    image: redis
+    restart: always
+    command: redis-server
+    healthcheck:
+      test: ["CMD", "redis-cli","ping"]
+    ports:
+      - "6379:6379"
+    networks:
+      - myai-net
+networks:
+  myai-net:
